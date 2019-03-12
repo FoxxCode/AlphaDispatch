@@ -1,0 +1,81 @@
+<!--
+  Generated template for the RegistrodetallesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Registro de Detalles</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-1></ion-col>
+      <ion-col col-10>
+        <form>
+            <ion-row>
+              <ion-col>
+                  <ion-item>
+                      <ion-label>Fecha de llegada</ion-label>
+                      <ion-datetime name="fechallegada" [(ngModel)]="data.fechallegada" displayFormat="DD MMM YYYY"  pickerFormat="DD MMM YYYY"  cancelText ="Cancelar" doneText="Ok"></ion-datetime> 
+                  </ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                      <ion-label>Hora de llegada</ion-label>
+                      <ion-datetime name="horallegada" [(ngModel)]="data.horallegada" displayFormat="h:mm A" pickerFormat="h mm s A"></ion-datetime>
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                  <ion-item>
+                      <ion-label>Fecha de Inicio</ion-label>
+                      <ion-datetime name="fechainicio" [(ngModel)]="data.fechainicio" displayFormat="DD MMM YYYY"  pickerFormat="DD MMM YYYY"  cancelText ="Cancelar" doneText="Ok"></ion-datetime> 
+                  </ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                      <ion-label>Hora de Inicio</ion-label>
+                      <ion-datetime name="horainicio" [(ngModel)]="data.horainicio" displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                  <ion-item>
+                      <ion-label>Fecha de Fin Trabajo</ion-label>
+                      <ion-datetime name="fechafin" [(ngModel)]="data.fechafin" displayFormat="DD MMM YYYY"  pickerFormat="DD MMM YYYY"  cancelText ="Cancelar" doneText="Ok"></ion-datetime> 
+                  </ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                      <ion-label>Hora de Fin Trabajo</ion-label>
+                      <ion-datetime name="horafin" [(ngModel)]="data.horafin" displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-item>
+                    <ion-label floating>Observación</ion-label>
+                    <ion-textarea name="observacion" [(ngModel)]="data.observacion" style="height: 200px"></ion-textarea>
+                </ion-item>
+            </ion-row>
+            <br>
+            <ion-row>
+                <ion-col text center>
+                  <button ion-button block color="dark" (click)="registroTiempo()">Registrar</button>
+                </ion-col>
+            </ion-row>
+        </form>
+      </ion-col>
+      <ion-col col-1></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

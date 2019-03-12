@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+      Casos Dispatch
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="bg-style">
+  <ion-grid>
+    <br><br><br>
+    <ion-row>
+      <ion-col col-1></ion-col>
+      <ion-col col-10>
+        <ion-card>
+          <ion-card-header>
+            Formulario de Ingreso
+          </ion-card-header>
+          <ion-card-content>
+            <form [formGroup]="credentialsForm">
+              <ion-item>
+                <ion-label floating> Número de Celular </ion-label>
+                <ion-input [(ngModel)]="data.phone" [formControl]="credentialsForm.controls['phone']"></ion-input>
+              </ion-item>
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.phone">
+                  <div style="color: brown" class="error.message" *ngIf="credentialsForm.get('phone').hasError(validation.type) && (credentialsForm.get('phone').dirty || credentialsForm.get('phone').touched)">
+                    {{validation.message}}
+                  </div>
+                </ng-container>
+              </div>
+              <ion-item>
+                <ion-label floating> Número de Pin</ion-label>
+                <ion-input [(ngModel)]="data.pin" [formControl]="credentialsForm.controls['pin']" type="password"></ion-input>
+              </ion-item>
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.pin">
+                  <div style="color: brown" class="error.message" *ngIf="credentialsForm.get('pin').hasError(validation.type) && (credentialsForm.get('pin').dirty || credentialsForm.get('pin').touched)">
+                    {{validation.message}}
+                  </div>
+                </ng-container>
+              </div>
+              <br>
+              <ion-row>
+                <ion-col text center>
+                  <button (click)="sendForm()" ion-button block color="dark">INGRESAR</button>
+                </ion-col>
+              </ion-row>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-1></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

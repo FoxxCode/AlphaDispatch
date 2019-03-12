@@ -1,0 +1,7 @@
+{
+  "name": "DispatchMovil",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
